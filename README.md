@@ -11,3 +11,12 @@ Programs that use LAN connections
 - If request is not accepted server returns "ERROR".
 - If request contains "\r\n" or "\n" server adds "\r\n" to response.
 - Python script can be used to test server functionality.
+
+
+## palindroms-tcp
+
+- TCP server written in C++
+- Functionality same as UDP server
+- Can handle multiple clients at once
+- Uses new thread for each client
+- Each request must contains "\r\n" as request terminator
