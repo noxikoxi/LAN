@@ -20,3 +20,8 @@ Programs that use LAN connections
 - Can handle multiple clients at once
 - Uses new thread for each client
 - Each request must contains "\r\n" as request terminator
+
+## check-website
+
+- simple java program that check if given website is working
+- checks response status code and search for given string in html
