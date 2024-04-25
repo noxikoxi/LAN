@@ -58,6 +58,14 @@ def test4(socket):
     print("Sending ", req)
     sock.send(req)
     print(sock.recv(1024))
+    req = b'\r\n'
+    print("Sending ", req)
+    sock.send(req)
+    print(sock.recv(1024))
+    req = b'al ala ala\r\n'
+    print("Sending ", req)
+    sock.send(req)
+    print(sock.recv(1024))
     sock.shutdown(1)
     print(sock.recv(1024))
     print('\n')

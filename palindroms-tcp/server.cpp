@@ -131,10 +131,17 @@ char* ClientHandler::handleRequest(char* begin, int request_len)
     // Handle Start state
     if(this->request_state == START)
     {
-        if ((*end >= 'a' && *end <= 'z') ||  (*end >= 'A' && *end <= 'Z')) // Duże lub małe litery
+        if(request_len == 1){
+            this->request_result_state=UNFINISHED_REQUEST;
+            return begin;
+        }
+        else if ((*end >= 'a' && *end <= 'z') ||  (*end >= 'A' && *end <= 'Z')) // Duże lub małe litery
         {
             this->request_state = LETTER;
             ++end;
+        }else if (*end == '\r' && *(end+1)== '\n'){
+             this->request_result_state=FINISHED_REQUEST;
+             return end+1;
         }else{
             this->request_state = ERROR;
         }
