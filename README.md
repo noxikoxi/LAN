@@ -31,4 +31,7 @@ Programs that use LAN connections
 - simple python program tak fetch public api using requests module
 - checks musicians groups and returns groups in which they played together
 - run it from command line passing at least 2 musican IDs
-- example: python main.py 516820 532854 702387 
+- example: python main.py 516820 532854 702387
+
+## rest-server
+- python wsgi server with endpoints to perform operations on sqlite database
